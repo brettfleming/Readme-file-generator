@@ -1,13 +1,13 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const utils = require('./utils/generateMarkdowns')
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: "input",
-        name: "projectTitle",
+        name: "title",
         message: "What is the project title?",
     },
     {
@@ -57,16 +57,62 @@ const questions = [
 ];
 
 function userPrompt() {
-    inquirer.prompt(questions);
+    inquirer.prompt(questions)
+    .then(data => {
+       const readme =  `
+<h1 align="center">${data.title} </h1>
+    
+![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)
+
+## Description
+${data.description}
+
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Installation
+${data.installation}
+
+## Usage
+${data.usage}
+
+## License
+![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)
+
+This application is covered by the ${data.license} license. 
+
+## Contributing
+${data.contributing}
+
+## Tests
+${data.tests}
+    
+## Questions
+Reach out to me on GitHub: [${data.username}](https://github.com/${data.username})
+or reach out to me by email ${data.email}
+`
+        fs.writeFile('generatedReadMe.md', readme, (err) => {
+            if ( err ) console.log('err:', err);
+        })
+    })
+    
 }
 
 
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init(questions) {
+function init() {
     userPrompt();
+    generateMarkdown();
 }
 
 // Function call to initialize app
