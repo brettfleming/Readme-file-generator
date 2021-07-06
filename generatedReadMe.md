@@ -1,10 +1,10 @@
 
-<h1 align="center">sdkfj;asldk </h1>
+<h1>my new project </h1>
     
-![badge](https://img.shields.io/badge/license-Apache-brightgreen)<br />
+![badge](https://img.shields.io/badge/license-Apache-brightgreen)
 
 ## Description
-sdf;lkajsdlfkj
+its a cool project that does things
 
 ## Table of Contents
 - [Description](#description)
@@ -16,22 +16,22 @@ sdf;lkajsdlfkj
 - [Questions](#questions)
 
 ## Installation
-asdkjfl
+it takes for ever
 
 ## Usage
-asdfksdlf
+it fixes things 
 
 ## License
 ![badge](https://img.shields.io/badge/license-Apache-brightgreen)
-<br />
+
 This application is covered by the Apache license. 
 
 ## Contributing
-adksljf;
+me 
 
 ## Tests
-aslkdjf
+yes many
     
 ## Questions
-Reach out to me on GitHub: [dflaksdfjal](https://github.com/dflaksdfjal)
-or reach our to me by email sdlfkajsdfl
+Reach out to me on GitHub: [brettfleming](https://github.com/brettfleming)
+or reach out to me by email brett@code.com

@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
+// const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -60,12 +60,9 @@ function userPrompt() {
     inquirer.prompt(questions)
     .then(data => {
        const readme =  `
-<h1 align="center">${data.title} </h1>
+<h1>${data.title} </h1>
     
 ![badge](https://img.shields.io/badge/license-${data.license}-brightgreen)
-
-## Description
-${data.description}
 
 ## Table of Contents
 - [Description](#description)
@@ -75,6 +72,9 @@ ${data.description}
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
+
+## Description
+${data.description}
 
 ## Installation
 ${data.installation}
@@ -97,6 +97,8 @@ ${data.tests}
 Reach out to me on GitHub: [${data.username}](https://github.com/${data.username})
 or reach out to me by email ${data.email}
 `
+
+
         fs.writeFile('generatedReadMe.md', readme, (err) => {
             if ( err ) console.log('err:', err);
         })
@@ -112,7 +114,7 @@ or reach out to me by email ${data.email}
 // TODO: Create a function to initialize app
 function init() {
     userPrompt();
-    generateMarkdown();
+    
 }
 
 // Function call to initialize app
